@@ -7,9 +7,9 @@ const router = express.Router();
 // NOTE: All routes exported from apiRoutes will get placed under the /api path
 // this is just to save a little typing so in my api routes I don't have to put
 // /api in front of each route.
-router.use('/api', require('./apiRoutes'));
+router.use('/api', require('./api/apiRoutes'));
 
 // add HTML routes to current router
-router.use(require('./htmlRoutes'));
+router.use(require('./api/htmlRoutes'));
 
 module.exports = router;

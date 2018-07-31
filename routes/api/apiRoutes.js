@@ -1,8 +1,8 @@
 const express = require('express');
 const passport = require('passport');
 const router = express.Router();
-const db = require('../models');
-const mustBeLoggedIn = require('../shared/middleware/mustBeLoggedIn');
+const db = require('../../models');
+const mustBeLoggedIn = require('../../shared/middleware/mustBeLoggedIn');
 
 function getCurrentUser(req, res) {
   // I'm picking only the specific fields its OK for the audience to see publicly
