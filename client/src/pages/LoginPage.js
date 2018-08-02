@@ -8,6 +8,7 @@ import { update } from '../services/withUser';
 
 class LoginPage extends Component {
   state = {
+    companyId: null,
     username: null,
     password: null
   }
@@ -19,11 +20,12 @@ class LoginPage extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const { username, password } = this.state;
+    const { companyId, username, password } = this.state;
     const { history } = this.props;
 
     // post an auth request
     axios.post('/api/auth', {
+      companyId,
       username,
       password
     })
@@ -38,7 +40,7 @@ class LoginPage extends Component {
       // if it's any other status code, there's some other unhandled error so we'll just show
       // the generic message.
       this.setState({
-        error: err.response.status === 401 ? 'Invalid username or password.' : err.message
+        error: err.response.status === 401 ? 'Invalid Company Id, Username or Password. Please try again or contact us for assistance.' : err.message
       });
     });
   }
@@ -50,12 +52,21 @@ class LoginPage extends Component {
         <Row>
           <Col xs={6} xsOffset={3}>
             <form onSubmit={this.handleLogin}>
-              <h1>Log In</h1>
+              <h1>Welcome to MVP Insight.</h1>
+              <h4> All fields are required.</h4>
               {error &&
                 <div>
                   {error}
                 </div>
               }
+              <div>
+                <TextField
+                  name="companyID"
+                  hintText="Company ID"
+                  floatingLabelText="Company ID (6 characters)"
+                  onChange={this.handleInputChanged}
+                />
+              </div>
               <div>
                 <TextField
                   name="username"
