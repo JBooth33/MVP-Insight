@@ -10,6 +10,7 @@ import { withUser, update } from './services/withUser';
 import CreateAccountPage from './pages/CreateAccountPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import AdminMainPage from './pages/AdminMainPage'
 import NotFoundPage from './pages/NotFoundPage';
 
 class App extends Component {
@@ -40,9 +41,10 @@ class App extends Component {
               user={user}
             />
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/home" component={HomePage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
+              <Route exact path="/admin" component={AdminMainPage} />
               <Route component={NotFoundPage} />
             </Switch>
           </Fragment>
