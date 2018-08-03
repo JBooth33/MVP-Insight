@@ -1,4 +1,5 @@
 module.exports = {
   User: require('./User'),
-  SocialMediaMembership: require('./SocialMediaMembership')
+  Partner: require('./Partner'),
+  Role: require('./Role') 
 };
