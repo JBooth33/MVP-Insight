@@ -4,6 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import './LoginPage.css';
 import { update } from '../services/withUser';
 
 class LoginPage extends Component {
@@ -59,7 +60,7 @@ class LoginPage extends Component {
                   {error}
                 </div>
               }
-              <div>
+              <div className = "tag">
                 <TextField
                   name="companyID"
                   hintText="Company ID"
@@ -92,6 +93,7 @@ class LoginPage extends Component {
               <p>
                 or
               </p>
+              
               <p>
                 <Link to="/create">
                 Register
