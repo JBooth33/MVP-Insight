@@ -32,12 +32,12 @@ router.get("/admin", function (req, res) {
 });
 
 // Route for Admin-User page
-router.get("/admin/user", function (req, res) {
+router.get("/admin/users", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/src/pages/AdminUserPage.js"));
 });
 
 // Route for Admin-Partner page
-router.get("/admin/partner", function (req, res) {
+router.get("/admin/partners", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/src/pages/AdminPartnerPage.js"));
 });
 
