@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 // bcrypt is the hashing algorithm we'll use to protect stored credentials.
-// NEVER STORE PASSWORDS OR OTHER SENSITIVE DATA AS PLAIN TEXT!!!
+// NEVER STORE PASSWORDS../../../../Library/Caches/typescript/2.9/node_modules/@types/bcryptHER SENSITIVE DATA AS PLAIN TEXT!!!
 const bcrypt = require('bcrypt');
 
 // TL;DNR: this determines how expensive it is to generate the hash
