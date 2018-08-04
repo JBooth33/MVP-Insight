@@ -29,10 +29,9 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  phoneNumber: {
-    type: Number,
-    required: true,
-  }, 
+  title: {
+    type: String,
+  },
   role: {
     type: Number,
     required: true,
@@ -42,9 +41,18 @@ const UserSchema = new Schema({
     required: true,
     index: { unique: true }
   },
+  phoneNumber: {
+    type: Number,
+    required: true,
+  }, 
   password: {
     type: Number,
     minimum: 8
+  },
+  status: {
+    type: String,
+    default: Pending,
+    required: true,
   },
   dateCreated: { 
     type: Date, 
