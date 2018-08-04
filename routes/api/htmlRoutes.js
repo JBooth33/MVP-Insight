@@ -21,6 +21,11 @@ router.get("/create", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/src/pages/CreateAccountPage.js"));
 });
 
+// Route for Home page
+router.get("/home", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/HomePage.js"));
+});
+
 // Route for Admin page
 router.get("/admin", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/src/pages/AdminMainPage.js"));
