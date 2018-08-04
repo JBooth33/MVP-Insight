@@ -19,7 +19,9 @@ import RaisedButton from 'material-ui/RaisedButton';
     userTitle: null,
     userRole: null,
     userEmail: null,
-    userPhone: null
+    userPhone: null,
+    password: null,
+    confirmPassword: null
   }
    handleInputChanged = (event) => {
     this.setState({
@@ -29,7 +31,7 @@ import RaisedButton from 'material-ui/RaisedButton';
   handleLogin = (event) => {
     event.preventDefault();
      const { companyName, companyAddress1, companyAddress2, companyCity, companyState, companyZip, companyURL, companyContact, companyContactPhone,
-      userFirstName, userLastName, userTitle, userRole, userEmail, userPhone } = this.state;
+      userFirstName, userLastName, userTitle, userRole, userEmail, userPhone, password, confirmPassword } = this.state;
     const { history } = this.props;
      // post an auth request
     axios.post('/api/auth', {
@@ -47,7 +49,9 @@ import RaisedButton from 'material-ui/RaisedButton';
       userTitle,
       userRole,
       userEmail,
-      userPhone
+      userPhone,
+      password,
+      confirmPassword
     })
     .then(user => {
       // if the response is successful, update the current user and redirect to the home page
@@ -81,7 +85,7 @@ import RaisedButton from 'material-ui/RaisedButton';
               <div>
                 <TextField
                   name="companyName"
-                  hintText="*Company Name *"
+                  hintText="*Company Name"
                   floatingLabelText="*Company Name"
                   onChange={this.handleInputChanged}
                 />
@@ -160,8 +164,8 @@ import RaisedButton from 'material-ui/RaisedButton';
               <div>
                 <TextField
                   name="userLastName"
-                  hintText="*User Last Name"
-                  floatingLabelText="*User Last Name"
+                  hintText="*Last Name"
+                  floatingLabelText="*Last Name"
                   onChange={this.handleInputChanged}
                 />
               </div>
@@ -186,16 +190,34 @@ import RaisedButton from 'material-ui/RaisedButton';
               <div>
                 <TextField
                   name="userEmail"
-                  hintText="*Company Email Address"
-                  floatingLabelText="*Company Email Address"
+                  hintText="*Email Address"
+                  floatingLabelText="*Email Address"
                   onChange={this.handleInputChanged}
                 />
               </div>
               <div>
                 <TextField
                   name="userPhone"
-                  hintText="*User Phone Number"
-                  floatingLabelText="*User Phone Number"
+                  hintText="*Phone Number"
+                  floatingLabelText="*Phone Number"
+                  onChange={this.handleInputChanged}
+                />
+                </div>
+
+                <div>
+                <TextField
+                  name="password"
+                  hintText="*Password"
+                  floatingLabelText="*Password"
+                  onChange={this.handleInputChanged}
+                />
+                </div>
+
+                <div>
+                <TextField
+                  name="confirmPassword"
+                  hintText="*Confirm Password"
+                  floatingLabelText="*Confirm Password"
                   onChange={this.handleInputChanged}
                 />
                 </div>
