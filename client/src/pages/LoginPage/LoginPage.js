@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import './LoginPage.css';
-import { update } from '../services/withUser';
+import { update } from '../../services/withUser';
 
 class LoginPage extends Component {
   state = {
