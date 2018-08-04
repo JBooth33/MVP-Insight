@@ -3,14 +3,38 @@ const path = require("path");
 const router = express.Router();
 
 // Serve up static assets (usually on heroku)
-router.use(express.static("client/build"));
+router.use(express.static("client/public"));
 
 // Send every request to the React app
 // Define any API routes before this runs
 router.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
+// Route for login page
+router.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/LoginPage.js"));
+});
+
+// Route for Register page
+router.get("/create", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/CreateAccountPage.js"));
+});
+
+// Route for Admin page
+router.get("/admin", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/AdminMainPage.js"));
+});
+
+// Route for Admin-User page
+router.get("/admin/user", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/AdminUserPage.js"));
+});
+
+// Route for Admin-Partner page
+router.get("/admin/partner", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/AdminPartnerPage.js"));
+});
 
 module.exports = router;
 

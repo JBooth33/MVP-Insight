@@ -8,9 +8,9 @@ function getCurrentUser(req, res) {
   // I'm picking only the specific fields its OK for the audience to see publicly
   // never send the whole user object in the response, and only show things it's OK
   // for others to read (like ID, name, email address, etc.)
-  const { id, username } = req.user;
+  const { id, emailAddress, role } = req.user;
   res.json({
-    id, username
+    id, emailAddress, role
   });
 }
 
@@ -49,9 +49,9 @@ router.route('/users')
   .post((req, res, next) => {
     db.User.create(req.body)
       .then(user => {
-        const { id, username } = user;
+        const { id, emailAddress, role } = user;
         res.json({
-          id, username
+          id, emailAddress, role
         });
       })
       .catch(err => {
@@ -76,9 +76,9 @@ router.route('/stuff')
   .get(mustBeLoggedIn(), (req, res) => {
     // at this point we can assume the user is logged in. if not, the mustBeLoggedIn middleware would have caught it
     res.json([
-      'Bears',
-      'Beets',
-      'Battlestar Galactica'
+      'First Name',
+      'Last Name',
+      'Role'
     ]);
   });
 
