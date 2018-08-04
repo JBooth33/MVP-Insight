@@ -32,12 +32,17 @@ const PartnerSchema = new Schema({
     type: Number,
     required: true,
   }, 
-  phoneNumber: {
+    PrimaryContact: {
+    type: String,
+    required: true,
+  },
+  companyPhoneNumber: {
     type: Number,
     required: true,
   }, 
   status: {
     type: String,
+    default: Pending,
     required: true,
   }, 
   dateCreated: { 
