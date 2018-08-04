@@ -8,9 +8,9 @@ function getCurrentUser(req, res) {
   // I'm picking only the specific fields its OK for the audience to see publicly
   // never send the whole user object in the response, and only show things it's OK
   // for others to read (like ID, name, email address, etc.)
-  const { id, emailAddress, role } = req.user;
+  const { emailAddress, password, role } = req.user;
   res.json({
-    id, emailAddress, role
+    id, emailAddress, password, role
   });
 }
 
@@ -49,9 +49,9 @@ router.route('/users')
   .post((req, res, next) => {
     db.User.create(req.body)
       .then(user => {
-        const { id, emailAddress, role } = user;
+        const { emailAddress, password, role } = user;
         res.json({
-          id, emailAddress, role
+          emailAddress, password, role
         });
       })
       .catch(err => {
