@@ -11,6 +11,7 @@ import CreateAccountPage from './pages/CreateAccountPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import AdminMainPage from './pages/AdminMainPage'
+import UserList from './pages/UserList'
 import NotFoundPage from './pages/NotFoundPage';
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
               <Route exact path="/admin" component={AdminMainPage} />
+              <Route exact path="/admin/users" component={UserList} />
               <Route component={NotFoundPage} />
             </Switch>
           </Fragment>
