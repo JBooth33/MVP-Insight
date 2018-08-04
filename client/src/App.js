@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import { withUser, update } from './services/withUser';
 
 import CreateAccountPage from './pages/CreateAccountPage';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homepage/HomePage';
 import LoginPage from './pages/LoginPage';
 import AdminMainPage from './pages/AdminMainPage'
 import NotFoundPage from './pages/NotFoundPage';
