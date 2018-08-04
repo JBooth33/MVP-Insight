@@ -42,7 +42,7 @@ class App extends Component {
             />
             <Switch>
               <Route exact path="/home" component={HomePage} />
-              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
               <Route exact path="/admin" component={AdminMainPage} />
               <Route component={NotFoundPage} />
