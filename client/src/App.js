@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import { withUser, update } from './services/withUser';
 
 import CreateAccountPage from './pages/CreateAccountPage';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homepage/HomePage';
 import LoginPage from './pages/LoginPage';
 import AdminMainPage from './pages/AdminMainPage'
 import UserList from './pages/UserList'
@@ -43,7 +43,7 @@ class App extends Component {
             />
             <Switch>
               <Route exact path="/home" component={HomePage} />
-              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
               <Route exact path="/admin" component={AdminMainPage} />
               <Route exact path="/admin/users" component={UserList} />
