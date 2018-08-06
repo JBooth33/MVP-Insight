@@ -7,10 +7,13 @@ import Navbar from './components/Navbar';
 
 import { withUser, update } from './services/withUser';
 
+import AdminHomepage from './pages/AdminHomepage';
 import CreateAccountPage from './pages/CreateAccountPage';
-import HomePage from './pages/homepage/HomePage';
+import Homepage from './pages/Homepage';
 import LoginPage from './pages/LoginPage';
-import AdminMainPage from './pages/AdminMainPage'
+import PartnerList from './pages/PartnerList';
+import RequestQuote from './pages/RequestQuote';
+import RoleList from './pages/RoleList'
 import UserList from './pages/UserList'
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -42,11 +45,14 @@ class App extends Component {
               user={user}
             />
             <Switch>
-              <Route exact path="/home" component={HomePage} />
+              <Route exact path="/admin" component={AdminHomepage} />
+              <Route exact path="/admin/users" component={UserList} />
+              <Route exact path="/admin/partners" component={PartnerList} />
+              <Route exact path="/admin/roles" component={RoleList} />
+              <Route exact path="/home" component={Homepage} />
               <Route exact path="/" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
-              <Route exact path="/admin" component={AdminMainPage} />
-              <Route exact path="/admin/users" component={UserList} />
+              <Route exact path="/request" component={RequestQuote} />
               <Route component={NotFoundPage} />
             </Switch>
           </Fragment>
