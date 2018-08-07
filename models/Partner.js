@@ -42,7 +42,7 @@ const PartnerSchema = new Schema({
   }, 
   status: {
     type: String,
-    default: Pending,
+    default: "Pending",
     required: true,
   }, 
   dateCreated: { 

@@ -2,7 +2,10 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import API from "../../utils/API";
+// import RaisedButton from 'material-ui/RaisedButton';
+import SubmitButton from '../../components/SubmitButton';
+
  class CreateAccountPage extends Component {
   state = {
     companyName: null,
@@ -30,28 +33,29 @@ import RaisedButton from 'material-ui/RaisedButton';
   }
   handleLogin = (event) => {
     event.preventDefault();
+    console.log("Button Clicked");
      const { companyName, companyAddress1, companyAddress2, companyCity, companyState, companyZip, companyURL, companyContact, companyContactPhone,
       userFirstName, userLastName, userTitle, userRole, userEmail, userPhone, password, confirmPassword } = this.state;
     const { history } = this.props;
      // post an auth request
-    axios.post('/api/auth', {
-      companyName,
-      companyAddress1,
-      companyAddress2,
-      companyCity,
-      companyState,
-      companyZip,
-      companyURL,
-      companyContact,
-      companyContactPhone,
-      userFirstName,
-      userLastName,
-      userTitle,
-      userRole,
-      userEmail,
-      userPhone,
-      password,
-      confirmPassword
+    API.saveUser({
+      companyName: this.companyName,
+      companyAddress1: this.companyAddress1,
+      companyAddress2: this.companyAddress2,
+      companyCity: this.companyCity,
+      companyState: this.companyState,
+      companyZip: this.companyZip,
+      companyURL: this.companyURL,
+      companyContact: this.companyContact,
+      companyContactPhone: this.companyContactPhone,
+      userFirstName: this.userFirstName,
+      userLastName: this.userLastName,
+      userTitle: this.userTitle,
+      userRole: this.userRole,
+      userEmail: this.userEmail,
+      userPhone: this.userPhone,
+      password: this.password,
+      confirmPassword: this.confirmPassword
     })
     .then(user => {
       // if the response is successful, update the current user and redirect to the home page
@@ -68,7 +72,7 @@ import RaisedButton from 'material-ui/RaisedButton';
       });
     });
   }
-   render() {
+  render() {                         
     const { error } = this.state;
      return (
       <Grid fluid>
@@ -223,9 +227,9 @@ import RaisedButton from 'material-ui/RaisedButton';
                 </div>
                 
                 <div>
-                <RaisedButton primary type="submit">
+                <SubmitButton primary type="submit" onClick={this.handleLogin}>
                   Log In
-                </RaisedButton>
+                </SubmitButton>
               </div>
              </form>
           </Col>
