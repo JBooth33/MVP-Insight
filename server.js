@@ -34,22 +34,10 @@ app.use((error, req, res, next) => {
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/passport-examples",
-  {
-    useMongoClient: true
-  }
+mongoose.connect('mongodb://localhost:27017/mvp'
 );
 
-// When the server starts, create and save a new User document to the db
-// The "unique" rule in the User model's schema will prevent duplicate users from being added to the server
-db.User.create({ name: "Admin" })
-  .then(function(dbUser) {
-    console.log(dbUser);
-  })
-  .catch(function(err) {
-    console.log(err.message);
-  });
+
 
 // Routes
 

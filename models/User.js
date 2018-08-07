@@ -16,34 +16,29 @@ const bcrypt = require('bcrypt');
 const WORK_FACTOR = 10;
 
 const UserSchema = new Schema({
-  companyID: {
-    type: Number,
-    required: true,
-    index: { unique: true }
-  }, 
   firstName: {
     type: String,
-    required: true,
+    //required: true,
   },
   lastName: {
     type: String,
-    required: true,
+    //required: true,
   },
   title: {
     type: String,
   },
   role: {
     type: Number,
-    required: true,
+    //required: true,
   }, 
   emailAddress: {
     type: String,
-    required: true,
-    index: { unique: true }
+    //required: true,
+    //index: { unique: true }
   },
   phoneNumber: {
     type: Number,
-    required: true,
+    //required: true,
   }, 
   password: {
     type: Number,
@@ -51,8 +46,8 @@ const UserSchema = new Schema({
   },
   status: {
     type: String,
-    default: Pending,
-    required: true,
+    default: "Pending",
+    //required: true,
   },
   dateCreated: { 
     type: Date, 
