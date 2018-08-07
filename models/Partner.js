@@ -32,7 +32,7 @@ const PartnerSchema = new Schema({
     type: Number,
     required: true,
   }, 
-    PrimaryContact: {
+    primaryContact: {
     type: String,
     required: true,
   },

@@ -41,6 +41,78 @@ mongoose.connect(
   }
 );
 
+// When the server starts, create and save a new User document to the db
+// The "unique" rule in the User model's schema will prevent duplicate users from being added to the server
+db.User.create({ name: "Admin" })
+  .then(function(dbUser) {
+    console.log(dbUser);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+
+// Routes
+
+// Route for retrieving all Partner from the db
+app.get("/admin/partners", function(req, res) {
+  // Find all Notes
+  db.Partner.find({})
+    .then(function(dbPartner) {
+      // If all Notes are successfully found, send them back to the client
+      res.json(dbPartner);
+    })
+    .catch(function(err) {
+      // If an error occurs, send the error back to the client
+      res.json(err);
+    });
+});
+
+// Route for retrieving all Users from the db
+app.get("/admin/users", function(req, res) {
+  // Find all Users
+  db.User.find({})
+    .then(function(dbUser) {
+      // If all Users are successfully found, send them back to the client
+      res.json(dbUser);
+    })
+    .catch(function(err) {
+      // If an error occurs, send the error back to the client
+      res.json(err);
+    });
+});
+
+
+// Route for retrieving all Users from the db
+app.get("/admin/role", function(req, res) {
+  // Find all Users
+  db.Role.find({})
+    .then(function(dbRole) {
+      // If all Users are successfully found, send them back to the client
+      res.json(dbRole);
+    })
+    .catch(function(err) {
+      // If an error occurs, send the error back to the client
+      res.json(err);
+    });
+});
+
+// // Route to get all User's and populate them with their company information and role access
+// app.get("/userdetails", function(req, res) {
+//   // Find all users
+//   db.User.find({})
+//     // Specify that we want to populate the retrieved users with any associated notes
+//     .populate("partners")
+//     .populate("role")
+//     .then(function(dbUser) {
+//       // If able to successfully find and associate all Users and Notes, send them back to the client
+//       res.json(dbUser);
+//     })
+//     .catch(function(err) {
+//       // If an error occurs, send it back to the client
+//       res.json(err);
+//     });
+// });
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
