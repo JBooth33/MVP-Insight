@@ -113,6 +113,24 @@ app.get("/admin/role", function(req, res) {
 //     });
 // });
 
+// MongoDB Configuration configuration (Change this URL to your own DB)
+// mongoose.connect("mongodb://heroku_wsl4kwct:1tdue2s77s4noj3hhp6d2sprdk@ds119585.mlab.com:19585/heroku_wsl4kwct");
+var db = mongoose.connection;
+
+db.on("error", function(err) {
+  console.log("Mongoose Error: ", err);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
+// -------------------------------------------------
+
+// Main "/" Route. This will redirect the user to our rendered React application
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
