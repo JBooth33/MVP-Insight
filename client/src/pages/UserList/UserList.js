@@ -37,9 +37,9 @@ import "./UserList.css";
 
 //Gives each item in the list an ID
 let id = 0;
-function createData(companyID, firstName, lastName, phoneNumber, role, emailAddress, status) {
+function createData(companyID, firstName, lastName, phoneNumber, title, role, emailAddress, status) {
     id += 1;
-    return { id, companyID, firstName, lastName, phoneNumber, role, emailAddress, status };
+    return { id, companyID, firstName, lastName, phoneNumber, title, role, emailAddress, status };
 }
 
 //Adds sorting functionality
@@ -52,6 +52,7 @@ const columnData = [
     { id: 'firstName', numeric: false, disablePadding: false, label: 'First Name' },
     { id: 'lastnName', numeric: false, disablePadding: false, label: 'Last Name' },
     { id: 'phoneNumber', numeric: true, disablePadding: false, label: 'Phone Number' },
+    { id: 'title', numeric: false, disablePadding: false, label: 'Title' },
     { id: 'role', numeric: false, disablePadding: false, label: 'Role' },
     { id: 'emailAddress', numeric: false, disablePadding: false, label: 'Email Address' },
     { id: 'status', numeric: false, disablePadding: false, label: 'Status' },
@@ -211,8 +212,8 @@ class EnhancedTable extends React.Component {
             orderBy: 'companyID',
             selected: [],
             data: [
-                createData(111, 'Jonathon', 'Engelien', 7153237605, 'Admin', 'jonathon.engelien@gmail.com','active'),
-                createData(112, 'James', 'Smith', 7153237605, 'Admin', 'jonathon.engelien@gmail.com', 'active'),
+                createData(111, 'Jonathon', 'Engelien', 7153237605, 'CEO','Admin', 'jonathon.engelien@gmail.com','active'),
+                createData(112, 'James', 'Smith', 7153237605, 'Accountant','Admin', 'jonathon.engelien@gmail.com', 'active'),
             ],
             page: 0,
             rowsPerPage: 5,
@@ -313,6 +314,7 @@ class EnhancedTable extends React.Component {
                                             <TableCell string>{n.firstName}</TableCell>
                                             <TableCell string>{n.lastName}</TableCell>
                                             <TableCell numeric>{n.phoneNumber}</TableCell>
+                                            <TableCell string>{n.title}</TableCell>
                                             <TableCell string>{n.role}</TableCell>
                                             <TableCell string>{n.emailAddress}</TableCell>
                                             <TableCell string>{n.status}</TableCell>

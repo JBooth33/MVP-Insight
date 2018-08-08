@@ -49,6 +49,7 @@ function getSorting(order, orderBy) {
 
 const columnData = [
     { id: 'companyID', numeric: false, disablePadding: true, label: 'Company ID' },
+    { id: 'companyName', numeric: false, disablePadding: true, label: 'Company Name' },
     { id: 'address1', numeric: false, disablePadding: false, label: 'Address 1' },
     { id: 'address2', numeric: false, disablePadding: false, label: 'Address 2' },
     { id: 'city', numeric: true, disablePadding: false, label: 'City' },
@@ -312,6 +313,7 @@ class EnhancedTable extends React.Component {
                                             <TableCell component="th" scope="row" padding="none">
                                                 {n.companyID}
                                             </TableCell>
+                                            <TableCell string>{n.companyName}</TableCell>
                                             <TableCell string>{n.address1}</TableCell>
                                             <TableCell string>{n.address2}</TableCell>
                                             <TableCell string>{n.city}</TableCell>
