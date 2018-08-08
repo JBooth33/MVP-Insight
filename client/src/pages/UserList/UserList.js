@@ -37,9 +37,9 @@ import "./UserList.css";
 
 //Gives each item in the list an ID
 let id = 0;
-function createData(companyID, firstName, lastName, phoneNumber, role, emailAddress) {
+function createData(companyID, firstName, lastName, phoneNumber, role, emailAddress, status) {
     id += 1;
-    return { id, companyID, firstName, lastName, phoneNumber, role, emailAddress };
+    return { id, companyID, firstName, lastName, phoneNumber, role, emailAddress, status };
 }
 
 //Adds sorting functionality
@@ -48,12 +48,13 @@ function getSorting(order, orderBy) {
 }
 
 const columnData = [
-    { id: 'comanyID', numeric: false, disablePadding: true, label: 'Company ID' },
+    { id: 'companyID', numeric: false, disablePadding: true, label: 'Company ID' },
     { id: 'firstName', numeric: false, disablePadding: false, label: 'First Name' },
     { id: 'lastnName', numeric: false, disablePadding: false, label: 'Last Name' },
     { id: 'phoneNumber', numeric: true, disablePadding: false, label: 'Phone Number' },
     { id: 'role', numeric: false, disablePadding: false, label: 'Role' },
     { id: 'emailAddress', numeric: false, disablePadding: false, label: 'Email Address' },
+    { id: 'status', numeric: false, disablePadding: false, label: 'Status' },
     { id: 'dateCreated', numeric: false, disablePadding: false, label: 'Date Created' },
 ];
 
@@ -210,8 +211,8 @@ class EnhancedTable extends React.Component {
             orderBy: 'companyID',
             selected: [],
             data: [
-                createData(111, 'Jonathon', 'Engelien', 7153237605, 'Admin', 'jonathon.engelien@gmail.com'),
-                createData(112, 'James', 'Smith', 7153237605, 'Admin', 'jonathon.engelien@gmail.com'),
+                createData(111, 'Jonathon', 'Engelien', 7153237605, 'Admin', 'jonathon.engelien@gmail.com','active'),
+                createData(112, 'James', 'Smith', 7153237605, 'Admin', 'jonathon.engelien@gmail.com', 'active'),
             ],
             page: 0,
             rowsPerPage: 5,
@@ -314,6 +315,7 @@ class EnhancedTable extends React.Component {
                                             <TableCell numeric>{n.phoneNumber}</TableCell>
                                             <TableCell string>{n.role}</TableCell>
                                             <TableCell string>{n.emailAddress}</TableCell>
+                                            <TableCell string>{n.status}</TableCell>
                                             <TableCell string>{n.dateCreated}</TableCell>
                                         </TableRow>
                                     );

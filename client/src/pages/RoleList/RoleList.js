@@ -37,9 +37,9 @@ import "./RoleList.css";
 
 //Gives each item in the list an ID
 let id = 0;
-function createData(companyID, firstName, lastName, phoneNumber, role, emailAddress) {
+function createData(role, news, request_quote, tracking_shipment, create_delivery, wms_app, ltl_app, calendar, invoices) {
     id += 1;
-    return { id, companyID, firstName, lastName, phoneNumber, role, emailAddress };
+    return { id, role, news, request_quote, tracking_shipment, create_delivery, wms_app, ltl_app, calendar, invoices};
 }
 
 //Adds sorting functionality
@@ -48,13 +48,14 @@ function getSorting(order, orderBy) {
 }
 
 const columnData = [
-    { id: 'comanyID', numeric: false, disablePadding: true, label: 'Company ID' },
-    { id: 'firstName', numeric: false, disablePadding: false, label: 'First Name' },
-    { id: 'lastnName', numeric: false, disablePadding: false, label: 'Last Name' },
-    { id: 'phoneNumber', numeric: true, disablePadding: false, label: 'Phone Number' },
-    { id: 'role', numeric: false, disablePadding: false, label: 'Role' },
-    { id: 'emailAddress', numeric: false, disablePadding: false, label: 'Email Address' },
-    { id: 'dateCreated', numeric: false, disablePadding: false, label: 'Date Created' },
+    { id: 'role', numeric: false, disablePadding: true, label: 'Role' },
+    { id: 'news', numeric: false, disablePadding: false, label: 'News Tile' },
+    { id: 'request_quote', numeric: false, disablePadding: false, label: 'Tracking Shipment Tile' },
+    { id: 'create_delivery', numeric: true, disablePadding: false, label: 'Create Delivery Tile' },
+    { id: 'wms_app', numeric: false, disablePadding: false, label: 'WMS App Tile' },
+    { id: 'ltl_app', numeric: false, disablePadding: false, label: 'LTL App Tile' },
+    { id: 'calendar', numeric: false, disablePadding: false, label: 'Calendar Tile' },
+    { id: 'invoices', numeric: false, disablePadding: false, label: 'Invoices Tile' },
 ];
 
 //Renders the table to whatever sort is specified
@@ -207,14 +208,14 @@ class EnhancedTable extends React.Component {
 
         this.state = {
             order: 'asc',
-            orderBy: 'companyID',
+            orderBy: 'role',
             selected: [],
             data: [
-                createData(111, 'Jonathon', 'Engelien', 7153237605, 'Admin', 'jonathon.engelien@gmail.com'),
-                createData(112, 'James', 'Smith', 7153237605, 'Admin', 'jonathon.engelien@gmail.com'),
+                createData('MVP Member', 'Yes', 'Yes', 'Yes','Yes', 'Yes','Yes','Yes'),
+                createData('Warehouse', 'Yes', 'No', 'No','No', 'Yes','No','No'),
             ],
             page: 0,
-            rowsPerPage: 5,
+            rowsPerPage: 8,
         };
     }
 
@@ -307,14 +308,16 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell component="th" scope="row" padding="none">
-                                                {n.companyID}
+                                                {n.role}
                                             </TableCell>
-                                            <TableCell string>{n.firstName}</TableCell>
-                                            <TableCell string>{n.lastName}</TableCell>
-                                            <TableCell numeric>{n.phoneNumber}</TableCell>
-                                            <TableCell string>{n.role}</TableCell>
-                                            <TableCell string>{n.emailAddress}</TableCell>
-                                            <TableCell string>{n.dateCreated}</TableCell>
+                                            <TableCell string>{n.news}</TableCell>
+                                            <TableCell string>{n.request_quote}</TableCell>
+                                            <TableCell numeric>{n.tracking_shipment}</TableCell>
+                                            <TableCell string>{n.create_delivery}</TableCell>
+                                            <TableCell string>{n.wms_app}</TableCell>
+                                            <TableCell string>{n.ltl_app}</TableCell>
+                                            <TableCell string>{n.calendar}</TableCell>
+                                            <TableCell string>{n.invoices}</TableCell>
                                         </TableRow>
                                     );
                                 })}
