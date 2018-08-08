@@ -41,5 +41,11 @@ router.get("/admin/partners", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/src/pages/AdminPartnerPage.js"));
 });
 
+// Route for Admin-Roles page
+router.get("/admin/roles", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/src/pages/AdminRolePage.js"));
+});
+
+
 module.exports = router;
 
