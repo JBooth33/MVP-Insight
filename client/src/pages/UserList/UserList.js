@@ -18,21 +18,36 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
+// import Carousel from "@react-slick";
 
+
+import "./carousel.js";
 import "./UserList.css";
 
+// Additional styling /// 
 
+import { createMuiTheme } from '@material-ui/core/styles';
+import blue from '@material-ui/core/colors/blue';
+import indigo from '@material-ui/core/colors/indigo';
+import pink from '@material-ui/core/colors/pink';
+import red from '@material-ui/core/colors/red';
 
-// const styles = theme => ({
-//   root: {
-//     width: '100%',
-//     marginTop: theme.spacing.unit * 3,
-//     overflowX: 'auto',
-//   },
-//   table: {
-//     minWidth: 700,
-//   },
-// });
+const effects = createMuiTheme({
+    palette: {
+        primary: indigo,
+        secondary: pink,
+        error: red,
+        // Used by `getContrastText()` to maximize the contrast between the background and
+        // the text.
+        contrastThreshold: 3,
+        // Used to shift a color's luminance by approximately
+        // two indexes within its tonal palette.
+        // E.g., shift from Red 500 to Red 300 or Red 700.
+        tonalOffset: 0.2,
+      },
+    });
+  
+        
 
 
 //Gives each item in the list an ID
@@ -56,6 +71,7 @@ const columnData = [
     { id: 'emailAddress', numeric: false, disablePadding: false, label: 'Email Address' },
     { id: 'dateCreated', numeric: false, disablePadding: false, label: 'Date Created' },
 ];
+
 
 //Renders the table to whatever sort is specified
 class EnhancedTableHead extends React.Component {
@@ -188,6 +204,15 @@ EnhancedTableToolbar.propTypes = {
 EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
 
 const styles = theme => ({
+    
+    head: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+      },
+      body: {
+        fontSize: 14,
+      },
+    
     root: {
         width: '100%',
         marginTop: theme.spacing.unit * 3,
@@ -199,6 +224,7 @@ const styles = theme => ({
         overflowX: 'auto',
     },
 });
+
 
 
 class EnhancedTable extends React.Component {
@@ -345,6 +371,7 @@ class EnhancedTable extends React.Component {
     }
 }
 
+
 EnhancedTable.propTypes = {
     classes: PropTypes.object.isRequired,
 };
@@ -352,9 +379,7 @@ EnhancedTable.propTypes = {
 
 
 
-
 export default withStyles(styles)(EnhancedTable);
-
 
 
 
