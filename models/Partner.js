@@ -32,7 +32,7 @@ const PartnerSchema = new Schema({
     type: Number,
     required: true,
   }, 
-    PrimaryContact: {
+    primaryContact: {
     type: String,
     required: true,
   },
@@ -42,7 +42,7 @@ const PartnerSchema = new Schema({
   }, 
   status: {
     type: String,
-    default: Pending,
+    default: "Pending",
     required: true,
   }, 
   dateCreated: { 
