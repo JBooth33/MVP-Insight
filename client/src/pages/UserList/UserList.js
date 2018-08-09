@@ -1,24 +1,19 @@
-import React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import { lighten } from '@material-ui/core/styles/colorManipulator';
 
+//import React from 'react';
+import React, { Component } from 'react';
+import { Col, Row, Container } from "../../components/Grid";
+import { List, ListItem } from "../../components/userChart";
+
+// import PropTypes from 'prop-types';
+// import { withStyles } from '@material-ui/core/styles';
+// import Table from '@material-ui/core/Table';
+// import TableBody from '@material-ui/core/TableBody';
+// import TableCell from '@material-ui/core/TableCell';
+// import TableHead from '@material-ui/core/TableHead';
+// import TableRow from '@material-ui/core/TableRow';
+// import Paper from '@material-ui/core/Paper';
+
+//import classNames from 'classnames';
 import "./UserList.css";
 
 
@@ -65,142 +60,29 @@ class EnhancedTableHead extends React.Component {
         this.props.onRequestSort(event, property);
     };
 
-    render() {
-        const { onSelectAllClick, order, orderBy, numSelected, rowCount } = this.props;
-
-        return (
-            <TableHead>
-                <TableRow>
-                    <TableCell padding="checkbox">
-                        <Checkbox
-                            indeterminate={numSelected > 0 && numSelected < rowCount}
-                            checked={numSelected === rowCount}
-                            onChange={onSelectAllClick}
-                        />
-                    </TableCell>
-                    {columnData.map(column => {
-                        return (
-                            <TableCell
-                                key={column.id}
-                                numeric={column.numeric}
-                                padding={column.disablePadding ? 'none' : 'default'}
-                                sortDirection={orderBy === column.id ? order : false}
-                            >
-                                <Tooltip
-                                    title="Sort"
-                                    placement={column.numeric ? 'bottom-end' : 'bottom-start'}
-                                    enterDelay={300}
-                                >
-                                    <TableSortLabel
-                                        active={orderBy === column.id}
-                                        direction={order}
-                                        onClick={this.createSortHandler(column.id)}
-                                    >
-                                        {column.label}
-                                    </TableSortLabel>
-                                </Tooltip>
-                            </TableCell>
-                        );
-                    }, this)}
-                </TableRow>
-            </TableHead>
-        );
+    componentDidMount() {
+        this.getUsers();
     }
-};
 
-EnhancedTableHead.propTypes = {
-    numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.string.isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired,
-};
+    EnhancedTableToolbar.propTypes = {
+        classes: PropTypes.object.isRequired,
+        numSelected: PropTypes.number.isRequired,
+    };
 
-const toolbarStyles = theme => ({
-    root: {
-        paddingRight: theme.spacing.unit,
-    },
-    highlight:
-        theme.palette.type === 'light'
-            ? {
-                color: theme.palette.secondary.main,
-                backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-            }
-            : {
-                color: theme.palette.text.primary,
-                backgroundColor: theme.palette.secondary.dark,
-            },
-    spacer: {
-        flex: '1 1 100%',
-    },
-    actions: {
-        color: theme.palette.text.secondary,
-    },
-    title: {
-        flex: '0 0 auto',
-    },
-});
+    EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
 
-let EnhancedTableToolbar = props => {
-    const { numSelected, classes } = props;
-
-    return (
-        <Toolbar
-            className={classNames(classes.root, {
-                [classes.highlight]: numSelected > 0,
-            })}
-        >
-            <div className={classes.title}>
-                {numSelected > 0 ? (
-                    <Typography color="inherit" variant="subheading">
-                        {numSelected} selected
-            </Typography>
-                ) : (
-                        <Typography variant="title" id="tableTitle">
-                            Users
-            </Typography>
-                    )}
-            </div>
-            <div className={classes.spacer} />
-            <div className={classes.actions}>
-                {numSelected > 0 ? (
-                    <Tooltip title="Delete">
-                        <IconButton aria-label="Delete">
-                            <DeleteIcon />
-                        </IconButton>
-                    </Tooltip>
-                ) : (
-                        <Tooltip title="Filter list">
-                            <IconButton aria-label="Filter list">
-                                <FilterListIcon />
-                            </IconButton>
-                        </Tooltip>
-                    )}
-            </div>
-        </Toolbar>
-    );
-};
-
-EnhancedTableToolbar.propTypes = {
-    classes: PropTypes.object.isRequired,
-    numSelected: PropTypes.number.isRequired,
-};
-
-EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
-
-const styles = theme => ({
-    root: {
-        width: '100%',
-        marginTop: theme.spacing.unit * 3,
-    },
-    table: {
-        minWidth: 1020,
-    },
-    tableWrapper: {
-        overflowX: 'auto',
-    },
-});
+    const styles = theme => ({
+        root: {
+            width: '100%',
+            marginTop: theme.spacing.unit * 3,
+        },
+        table: {
+            minWidth: 1020,
+        },
+        tableWrapper: {
+            overflowX: 'auto',
+        },
+    });
 
 
 class EnhancedTable extends React.Component {
@@ -212,8 +94,8 @@ class EnhancedTable extends React.Component {
             orderBy: 'companyID',
             selected: [],
             data: [
-                createData(111, 'Jonathon', 'Engelien', 7153237605, 'CEO','Admin', 'jonathon.engelien@gmail.com','active'),
-                createData(112, 'James', 'Smith', 7153237605, 'Accountant','Admin', 'jonathon.engelien@gmail.com', 'active'),
+                createData(111, 'Jonathon', 'Engelien', 7153237605, 'CEO', 'Admin', 'jonathon.engelien@gmail.com', 'active'),
+                createData(112, 'James', 'Smith', 7153237605, 'Accountant', 'Admin', 'jonathon.engelien@gmail.com', 'active'),
             ],
             page: 0,
             rowsPerPage: 5,
@@ -268,14 +150,8 @@ class EnhancedTable extends React.Component {
         this.setState({ rowsPerPage: event.target.value });
     };
 
-    isSelected = id => this.state.selected.indexOf(id) !== -1;
-
 
     render() {
-        const { classes } = this.props;
-        const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
-        const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
-
         return (
             <Paper className={classes.root}>
                 <EnhancedTableToolbar numSelected={selected.length} />
@@ -327,66 +203,88 @@ class EnhancedTable extends React.Component {
                                     <TableCell colSpan={6} />
                                 </TableRow>
                             )}
-                        </TableBody>
-                    </Table>
-                </div>
-                <TablePagination
-                    component="div"
-                    count={data.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    backIconButtonProps={{
-                        'aria-label': 'Previous Page',
-                    }}
-                    nextIconButtonProps={{
-                        'aria-label': 'Next Page',
-                    }}
-                    onChangePage={this.handleChangePage}
-                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                />
-            </Paper>
-        );
-    }
-}
-
-EnhancedTable.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+                    </Col>
+                </Row>
+            </Container>
+                );
+            }
+        }
+        
+        export default Users;
+        
+        ///////////////////////////// KEEP //////////////////////////
+// const styles = theme => ({
+//     root: {
+//         width: '100%',
+//         marginTop: theme.spacing.unit * 3,
+//         overflowX: 'auto',
+//     },
+//     table: {
+//         minWidth: 700,
+//     },
+// });
 
 
+// let id = 0;
+// function createData(name, calories, fat, carbs, protein) {
+//     id += 1;
+//     return { id, name, calories, fat, carbs, protein };
+// }
 
 
+// const data = [
+//     createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+//     createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+//     createData('Eclair', 262, 16.0, 24, 6.0),
+//     createData('Cupcake', 305, 3.7, 67, 4.3),
+//     createData('Gingerbread', 356, 16.0, 49, 3.9),
+// ];
 
-export default withStyles(styles)(EnhancedTable);
+// function SimpleTable(props) {
+//     const { classes } = props;
 
+//     return (
+//         <Paper className={classes.root}>
+//             <Table className={classes.table}>
+//                 <TableHead>
+//                     <TableRow>
+//                         <TableCell numeric>User ID</TableCell>
+//                         <TableCell numeric>Company ID</TableCell>
+//                         <TableCell numeric>First Name</TableCell>
+//                         <TableCell numeric>Last Name</TableCell>
+//                         <TableCell numeric>Phone Number</TableCell>
+//                         <TableCell numeric>Role</TableCell>
+//                         <TableCell numeric>Email Address</TableCell>
+//                         <TableCell numeric>Status</TableCell>
+//                         <TableCell numeric>Date Created</TableCell>
+//                     </TableRow>
+//                 </TableHead>
+//                 <TableBody>
+//                     {data.map(n => {
+//                         return (
+//                             <TableRow key={n.id}>
+//                                 <TableCell component="th" scope="row" padding="none">
+//                                     {n.ObjectID}
+//                                 </TableCell>
+//                                 <TableCell string>{n.companyID}</TableCell>
+//                                 <TableCell string>{n.firstName}</TableCell>
+//                                 <TableCell string>{n.lastName}</TableCell>
+//                                 <TableCell numeric>{n.phoneNumber}</TableCell>
+//                                 <TableCell string>{n.role}</TableCell>
+//                                 <TableCell string>{n.emailAddress}</TableCell>
+//                                 <TableCell string>{n.status}</TableCell>
+//                                 <TableCell string>{n.dateCreated}</TableCell>
+//                             </TableRow>
+//                         );
+//                     })}
+//                 </TableBody>
+//             </Table>
+//         </Paper>
+//     );
+// }
 
+// SimpleTable.propTypes = {
+//     classes: PropTypes.object.isRequired,
+// };
 
-
-////////////////// BROKEN API CALL ////////////////////
-    // componentDidMount() {
-    //     // only try loading stuff if the user is logged in.
-    //     if (!this.props.user) {
-    //         return;
-    //     }
-
-    //     axios.get('/api/stuff')
-    //         .then(res => {
-    //             this.setState({
-    //                 stuff: res.data
-    //             });
-    //         })
-    //         .catch(err => {
-    //             // if we got an error, we'll just log it and set stuff to an empty array
-    //             console.log(err);
-    //             this.setState({
-    //                 stuff: []
-    //             });
-    //         });
-    // }
-    // loadUsers = () => {
-    //     API.getUsesr()
-    //         .then(res =>
-    //             this.setState({ users: [], companyID: "", firstName: "", lastName: "", phoneNumber: "", role: "", emailAddress: "", dateCreated: "" })
-    //         )
-    //         .catch(err => console.log(err));
-    // };
+// export default withStyles(styles)(SimpleTable);
