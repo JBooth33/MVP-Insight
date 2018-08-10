@@ -48,7 +48,7 @@ const Card = props => (
                       <img src="assets/images/pic01.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Magna</h2>
+                      <h2>News</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -59,7 +59,7 @@ const Card = props => (
                       <img src="assets/images/pic02.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Lorem</h2>
+                      <h2>Track Shipment</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -70,7 +70,7 @@ const Card = props => (
                       <img src="assets/images/pic03.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Feugiat</h2>
+                      <h2>Request Quote</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -81,7 +81,7 @@ const Card = props => (
                       <img src="assets/images/pic04.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Tempus</h2>
+                      <h2>Warehouse Management</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -92,7 +92,7 @@ const Card = props => (
                       <img src="assets/images/pic05.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Aliquam</h2>
+                      <h2>Transportation Management</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -103,7 +103,7 @@ const Card = props => (
                       <img src="assets/images/pic06.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Veroeros</h2>
+                      <h2>International</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -114,7 +114,7 @@ const Card = props => (
                       <img src="assets/images/pic07.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Ipsum</h2>
+                      <h2>Create Delivery</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -125,7 +125,7 @@ const Card = props => (
                       <img src="assets/images/pic08.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Dolor</h2>
+                      <h2>Delivery Calendar</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -136,7 +136,7 @@ const Card = props => (
                       <img src="assets/images/pic09.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Nullam</h2>
+                      <h2>NMVP Service</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -147,7 +147,7 @@ const Card = props => (
                       <img src="assets/images/pic10.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Ultricies</h2>
+                      <h2>Proof of Delivery</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -158,7 +158,7 @@ const Card = props => (
                       <img src="assets/images/pic11.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Dictum</h2>
+                      <h2>Invoices</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
@@ -169,7 +169,7 @@ const Card = props => (
                       <img src="/assets/images/pic12.jpg" alt="" />
                     </span>
                     <a href="generic.html">
-                      <h2>Pretium</h2>
+                      <h2>Reporting</h2>
                       <div className="content">
                         <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                       </div>
