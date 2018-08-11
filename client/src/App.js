@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 import { withUser, update } from './services/withUser';
 
@@ -55,6 +56,7 @@ class App extends Component {
               <Route exact path="/request" component={RequestQuote} />
               <Route component={NotFoundPage} />
             </Switch>
+            <Footer/>
           </Fragment>
         </MuiThemeProvider>
       </Router>
