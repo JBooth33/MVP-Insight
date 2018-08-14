@@ -38,9 +38,8 @@ const Card = props => (
             <div id="main">
               <div className="inner">
                 <header>
-                  <h1>Erat ut Sapien, mus curae, morbi dictum duis<br />
-                  aenean auctor at Dictum.</h1>
-                  <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+                  <h1>Welcome to MVP Insight</h1>
+                  <p>Here you can find all your relevant supply chain and transportation management information to analyze and run your business.</p>
                 </header>
                 <section className="tiles">
                   <article className="style1">
@@ -50,7 +49,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>News</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Latest industry trends, articles of interest and MVP happenings.</p>
                       </div>
                     </a>
                   </article>
@@ -61,7 +60,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Track Shipment</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Input your MVP tracking number, and get the current infomation on your delivery. </p>
                       </div>
                     </a>
                   </article>
@@ -72,7 +71,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Request Quote</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Provide relevant information and customer service team will send you a quote momentarily.</p>
                       </div>
                     </a>
                   </article>
@@ -83,7 +82,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Warehouse Management</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Review shipping, recieving and work orders; check inventory levels; other WMS activities. </p>
                       </div>
                     </a>
                   </article>
@@ -94,7 +93,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Transportation Management</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>SAccess to your TMS dashboards and data.</p>
                       </div>
                     </a>
                   </article>
@@ -105,7 +104,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>International</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Provide details on your international needs, and we will have our specialise contact you to arrange your shipment.</p>
                       </div>
                     </a>
                   </article>
@@ -116,7 +115,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Create Delivery</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Special Set-up to non-MVP Carrier to provide ASN information to our MVP customers.</p>
                       </div>
                     </a>
                   </article>
@@ -127,7 +126,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Delivery Calendar</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Rolling Calendar showing incoming deliveries to customer docks.</p>
                       </div>
                     </a>
                   </article>
@@ -138,7 +137,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>NMVP Service</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Let us support your local delivery and service needs</p>
                       </div>
                     </a>
                   </article>
@@ -149,7 +148,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Proof of Delivery</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Access POD copies or links to your your POD</p>
                       </div>
                     </a>
                   </article>
@@ -160,7 +159,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Invoices</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Access and download your recent MVP invoices, statement and detailed billing information.</p>
                       </div>
                     </a>
                   </article>
@@ -171,7 +170,7 @@ const Card = props => (
                     <a href="generic.html">
                       <h2>Reporting</h2>
                       <div className="content">
-                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                        <p>Access your daily, weekly and monthly MVP reports.</p>
                       </div>
                     </a>
                   </article>

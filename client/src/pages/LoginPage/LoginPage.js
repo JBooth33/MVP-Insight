@@ -1,10 +1,6 @@
 import axios from 'axios';
-import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Link } from 'react-router-dom';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import './LoginPage.css';
+import React from "react";
+import "./main.css";
 import { update } from '../../services/withUser';
 
 class LoginPage extends Component {
@@ -49,60 +45,33 @@ class LoginPage extends Component {
     const { error } = this.state;
 
     return (
-      <Grid fluid>
-        <Row>
-          <Col xs={6} xsOffset={3}>
-            <form onSubmit={this.handleLogin}>
-              <h1>Welcome to MVP Insight.</h1>
-              <h4> All fields are required.</h4>
-              {error &&
-                <div>
-                  {error}
-                </div>
-              }
-              <div className = "tag">
-                <TextField
-                  name="companyID"
-                  hintText="Company ID"
-                  floatingLabelText="Company ID (6 characters)"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="username"
-                  hintText="Username"
-                  floatingLabelText="Username"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="password"
-                  hintText="Password"
-                  floatingLabelText="Password"
-                  type="password"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <RaisedButton primary type="submit">
-                  Log In
-                </RaisedButton>
-              </div>
-              <p>
-                or
-              </p>
+        <body className="is-preload">
+
+		// Header 
+			<header id="header">
+				<h1>Welcome to MVP Insight</h1>
+				<p>Please provide your login credentials below. All fields are required or select register below to request and account or help to reach us for support. </p>
+			</header>
+{error &&
+    <div>
+      {error}
+    </div>
+  }
+		// Signup Form 
+			<form id="signup-form" method="post" action="#">
+				<input type="email" name="compnayID" id="companyID" placeholder="Company ID" />
+                <input type="email" name="username" id="username" placeholder="Email Address" />
+                <input type="email" name="password" id="password" placeholder="Password" />
+				<input type="submit" value="Sign In" />
+			</form>
+
+
+              <p>or</p>
               
-              <p>
-                <Link to="/create">
-                Register
-                </Link>
-              </p>
-            </form>
-          </Col>
-        </Row>
-      </Grid>
+              <p href="/create">Request an INSIGHT account</p>
+              <p href="">Contact Support</p>
+                
+    </body>
     );
   }
 }

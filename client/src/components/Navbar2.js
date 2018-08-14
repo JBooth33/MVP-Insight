@@ -1,7 +1,10 @@
-import React from "react";
 import axios from 'axios';
-import "./main.css";
-import "./noscript.css";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import AppBar from 'material-ui/AppBar';
+
+import LoginButton from './LoginButton';
+import LoginMenu from './LoginMenu';
 
 import { update } from '../services/withUser';
 
@@ -23,27 +26,13 @@ const Navbar = (props) => {
       });
   }
   return (
-
-    //<!-- Header -->
-    <header id="header">
-
-      // -- Logo -->
-        <a className="logo" href="index.html"><strong>INSIGHT</strong> <span>by MVP</span></a>
-
-    // -- Nav -->
-        <nav id="nav">
-          <ul>
-            <li><a href="index.html" className="active" 
+    <AppBar
+      title="MVP Insight"
       showMenuIconButton={false}
       iconElementRight={user ?
         <LoginMenu username={username} onLogOut={handleLogOut} />
-        : <LoginButton onClick={handleLogIn} />} >Home</a></li>
-            <li><a href="generic.html">Generic</a></li>
-            <li><a href="elements.html">Elements</a></li>
-          </ul>
-        </nav>
-
-    </header>
+        : <LoginButton onClick={handleLogIn} />}
+    />
   )
 };
 
