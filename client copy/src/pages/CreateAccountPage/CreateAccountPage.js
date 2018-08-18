@@ -184,12 +184,20 @@ import SubmitButton from '../../components/SubmitButton';
               </div>
               
               <div>
-                <TextField
-                  name="userRole"
-                  hintText="*Role with MVP"
-                  floatingLabelText="*Role with MVP"
-                  onChange={this.handleInputChanged}
-                />
+              <fieldset>
+                      <label>Role with MVP</label>
+                         <select id = "myList">
+                           <option value = "1">Warehouse</option>
+                           <option value = "2">Logisitics</option>
+                           <option value = "3">Carrier</option>
+                           <option value = "4">Supply Chain Management</option>
+                           <option value = "5">Supply Chain Specialist</option>
+                           <option value = "6">TT Access</option>
+                           <option value = "7">MVP Team Member</option>
+                           <option value = "8">MVP Admin</option>
+                        </select>
+            
+              </fieldset>
               </div>
               
               <div>
