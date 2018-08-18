@@ -5,7 +5,7 @@ import API from "../../utils/API";
 // import RaisedButton from 'material-ui/RaisedButton';
 import SubmitButton from '../../components/SubmitButton';
 
- class CreateAccountPage extends Component {
+class CreateAccountPage extends Component {
   state = {
     companyName: null,
     companyAddress1: null,
@@ -25,7 +25,7 @@ import SubmitButton from '../../components/SubmitButton';
     password: null,
     confirmPassword: null
   }
-   handleInputChanged = (event) => {
+  handleInputChanged = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -36,7 +36,7 @@ import SubmitButton from '../../components/SubmitButton';
     //  const { companyName, companyAddress1, companyAddress2, companyCity, companyState, companyZip, companyURL, companyContact, companyContactPhone,
     //   userFirstName, userLastName, userTitle, userRole, userEmail, userPhone, password, confirmPassword } = this.state;
     const { history } = this.props;
-     // post an auth request
+    // post an auth request
     API.saveUser({
       companyName: this.companyName,
       companyAddress1: this.companyAddress1,
@@ -56,24 +56,24 @@ import SubmitButton from '../../components/SubmitButton';
       password: this.password,
       confirmPassword: this.confirmPassword
     })
-    .then(user => {
-      // if the response is successful, update the current user and redirect to the home page
-     // update(user.data);
-      history.push('/');
-    })
-    .catch(err => {
-      // an error occured, so let's record the error in our state so we can display it in render
-      // if the error response status code is 401, it's an invalid username or password.
-      // if it's any other status code, there's some other unhandled error so we'll just show
-      // the generic message.
-      this.setState({
-        error: err.response.status === 401 ? 'Invalid Company Id, Username or Password. Please try again or contact us for assistance.' : err.message
+      .then(user => {
+        // if the response is successful, update the current user and redirect to the home page
+        // update(user.data);
+        history.push('/');
+      })
+      .catch(err => {
+        // an error occured, so let's record the error in our state so we can display it in render
+        // if the error response status code is 401, it's an invalid username or password.
+        // if it's any other status code, there's some other unhandled error so we'll just show
+        // the generic message.
+        this.setState({
+          error: err.response.status === 401 ? 'Invalid Company Id, Username or Password. Please try again or contact us for assistance.' : err.message
+        });
       });
-    });
   }
-  render() {                         
+  render() {
     const { error } = this.state;
-     return (
+    return (
       <Grid fluid>
         <Row>
           <Col xs={6} xsOffset={3}>
@@ -109,7 +109,7 @@ import SubmitButton from '../../components/SubmitButton';
                   onChange={this.handleInputChanged}
                 />
               </div>
-              
+
               <div>
                 <TextField
                   name="companyCity"
@@ -149,14 +149,14 @@ import SubmitButton from '../../components/SubmitButton';
                   floatingLabelText="Company Contact Phone"
                   onChange={this.handleInputChanged}
                 />
-                </div>
+              </div>
             </form>
           </Col>
         </Row>
-         <Row>
+        <Row>
           <Col xs={6} xsOffset={3}>
             <form onSubmit={this.handleLogin}>
-               <div>
+              <div>
                 <TextField
                   name="userFirstName"
                   hintText="*First Name"
@@ -180,7 +180,7 @@ import SubmitButton from '../../components/SubmitButton';
                   onChange={this.handleInputChanged}
                 />
               </div>
-              
+
               <div>
                 <TextField
                   name="userRole"
@@ -189,7 +189,7 @@ import SubmitButton from '../../components/SubmitButton';
                   onChange={this.handleInputChanged}
                 />
               </div>
-              
+
               <div>
                 <TextField
                   name="userEmail"
@@ -205,32 +205,32 @@ import SubmitButton from '../../components/SubmitButton';
                   floatingLabelText="*Phone Number"
                   onChange={this.handleInputChanged}
                 />
-                </div>
+              </div>
 
-                <div>
+              <div>
                 <TextField
                   name="password"
                   hintText="*Password"
                   floatingLabelText="*Password"
                   onChange={this.handleInputChanged}
                 />
-                </div>
+              </div>
 
-                <div>
+              <div>
                 <TextField
                   name="confirmPassword"
                   hintText="*Confirm Password"
                   floatingLabelText="*Confirm Password"
                   onChange={this.handleInputChanged}
                 />
-                </div>
-                
-                <div>
+              </div>
+
+              <div>
                 <SubmitButton primary type="submit" onClick={this.handleLogin}>
                   Log In
                 </SubmitButton>
               </div>
-             </form>
+            </form>
           </Col>
         </Row>
       </Grid>
