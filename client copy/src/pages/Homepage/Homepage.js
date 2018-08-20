@@ -8,19 +8,7 @@ const Card = props => (
       <body className="is-preload">
 
         <div id="wrapper">
-  
 
-            <header id="header">
-              <div className="inner">
-  
-
-                  <a href="index.html" className="logo">
-                    <span className="symbol"><img src="images/logo.svg" alt="" /></span><span className="title">Phantom</span>
-                  </a>
-  
-  
-              </div>
-            </header>
 
             <div id="main">
               <div className="inner">
@@ -33,7 +21,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic01.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="https://www.facebook.com/pg/mvpship/posts/?ref=page_internal">
                       <h2>News</h2>
                       <div className="content">
                         <p>Latest industry trends, articles of interest and MVP happenings.</p>
@@ -44,7 +32,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic02.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="https://mvpship.mercurygate.net/MercuryGate/newmenu/PortalFrame.jsp?returnUrl=..%2Fmainframe%2FMainFrame.jsp&bCompaySelected=false">
                       <h2>Track Shipment</h2>
                       <div className="content">
                         <p>Input your MVP tracking number, and get the current infomation on your delivery. </p>
@@ -55,7 +43,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic03.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="../RequestQuote/RequestQuote.js">
                       <h2>Request Quote</h2>
                       <div className="content">
                         <p>Provide relevant information and customer service team will send you a quote momentarily.</p>
@@ -66,7 +54,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic04.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="http://cartonlogic.mvplogistics.com:8080/WebApp.html">
                       <h2>Warehouse Management</h2>
                       <div className="content">
                         <p>Review shipping, recieving and work orders; check inventory levels; other WMS activities. </p>
@@ -77,7 +65,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic05.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="https://mvpship.mercurygate.net/MercuryGate/login/mgLogin.jsp">
                       <h2>Transportation Management</h2>
                       <div className="content">
                         <p>SAccess to your TMS dashboards and data.</p>
@@ -88,7 +76,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic06.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="https://www.mvplogistics.com/solutions/international-ocean-air/">
                       <h2>International</h2>
                       <div className="content">
                         <p>Provide details on your international needs, and we will have our specialise contact you to arrange your shipment.</p>
@@ -110,7 +98,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic08.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="mailto:info@mvpship.com">
                       <h2>Delivery Calendar</h2>
                       <div className="content">
                         <p>Rolling Calendar showing incoming deliveries to customer docks.</p>
@@ -121,7 +109,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic09.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="mailto:info@mvpship.com">
                       <h2>NMVP Service</h2>
                       <div className="content">
                         <p>Let us support your local delivery and service needs</p>
@@ -132,7 +120,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic10.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="mailto:info@mvpship.com">
                       <h2>Proof of Delivery</h2>
                       <div className="content">
                         <p>Access POD copies or links to your your POD</p>
@@ -143,7 +131,7 @@ const Card = props => (
                     <span className="image">
                       <img src="assets/images/pic11.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="mailto:info@mvpship.com">
                       <h2>Invoices</h2>
                       <div className="content">
                         <p>Access and download your recent MVP invoices, statement and detailed billing information.</p>
@@ -154,7 +142,7 @@ const Card = props => (
                     <span className="image">
                       <img src="/assets/images/pic12.jpg" alt="" />
                     </span>
-                    <a href="generic.html">
+                    <a href="mailto:info@mvpship.com">
                       <h2>Reporting</h2>
                       <div className="content">
                         <p>Access your daily, weekly and monthly MVP reports.</p>

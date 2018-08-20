@@ -33,9 +33,9 @@ const Navbar = (props) => {
 
         <nav id="nav">
           <ul>
-            <li><a href="index.html" className="active" >Home</a></li>
-            <li><a href="generic.html">Generic</a></li>
-            <li><a href="elements.html">Elements</a></li>
+            <li><a href="https://www.mvplogistics.com" className="active" >Home</a></li>
+            <li><a href="generic.html">Logout</a></li>
+            <li><a href="http://localhost:3000/admin">Admin</a></li>
           </ul>
         </nav>
 

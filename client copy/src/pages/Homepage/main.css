@@ -19,10 +19,7 @@ canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
-	padding-top: 5px;
-	padding-bottom: 0;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;

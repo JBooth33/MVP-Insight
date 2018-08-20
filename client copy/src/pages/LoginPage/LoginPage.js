@@ -69,8 +69,9 @@ class LoginPage extends Component {
 
       </form>
               
-              <p href="/create">Request an INSIGHT account</p>
-              <p href="">Contact Support</p>
+              <a href="/create">Request an INSIGHT account</a>
+              <br></br>
+              <a href="mailto:it_mvp@mvpship.com">Contact Support</a>
                 
     </body>
     );

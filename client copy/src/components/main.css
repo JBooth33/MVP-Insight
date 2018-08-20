@@ -19,10 +19,7 @@ canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
-	padding-top: 5px;
-	padding-bottom: 0;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
@@ -2688,27 +2685,27 @@ input, select, textarea {
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #267fa1;
+				background-color: #f2849e;
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #6b8c9b;
+				background-color: #7ecaf6;
 			}
 
 			.tiles article.style3 > .image:before {
-				background-color: #898b8e;
+				background-color: #7bd0c1;
 			}
 
 			.tiles article.style4 > .image:before {
-				background-color: #267fa1;
+				background-color: #c75b9b;
 			}
 
 			.tiles article.style5 > .image:before {
-				background-color: #6b8c9b;
+				background-color: #ae85ca;
 			}
 
 			.tiles article.style6 > .image:before {
-				background-color: #898b8e;
+				background-color: #8499e7;
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {

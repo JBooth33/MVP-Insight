@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import API from "../../utils/API";
 import "../../css/main.css";
 import "../../css/noscript.css";
-
+import RaisedButton from 'material-ui/RaisedButton';
+// import SubmitButton from '../../components/SubmitButton';
 
  class CreateQuotePage extends Component {
   state = {
@@ -65,7 +66,7 @@ import "../../css/noscript.css";
       specialInstruct} = this.state;
     const { history } = this.props;
      // post an auth request
-    axios.post('/api/auth', {
+    API.saveQuote('/api/auth', {
       fromName,
       fromAddress1,
       fromAddress2,
@@ -329,7 +330,7 @@ import "../../css/noscript.css";
                 
                 <div>
                 <RaisedButton primary type="submit">
-                  Log In
+                 Submit Quote Request
                 </RaisedButton>
               </div>
              </form>
